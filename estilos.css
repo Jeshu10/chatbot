@@ -1,0 +1,1025 @@
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-primario: #B9FF66;
+    --color-secundario: #191A23;
+    --gray-color: #F3F3F3;
+
+    --padding-container: 80px 0;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/** Hero **/
+
+.hero {
+    --nav-icon-background: url("./assets/menu-open.svg");
+    --transform-list-menu: translate(-100%);
+}
+
+.hero:has(.nav__checkbox:checked) {
+    --nav-icon-background: url("./assets/menu-close.svg");
+    --transform-list-menu: translate(0);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.nav__label,
+.nav__logo-link {
+    z-index: 100;
+}
+
+.nav__label {
+    width: 36px;
+    height: 36px;
+    background-image: var(--nav-icon-background);
+    background-size: cover;
+    cursor: pointer;
+
+    transition: .4s background-image;
+}
+
+.nav__checkbox {
+    display: none;
+}
+
+.nav__list {
+    position: absolute;
+    inset: 0;
+
+    padding: 0;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+
+    transform: var(--transform-list-menu);
+    transition: transform .5s;
+}
+
+
+
+.nav__link {
+    display: inline-block;
+    padding: .8rem .5rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav__link--cta {
+    border: 1px black solid;
+    border-radius: 10px;
+    padding-inline: 1.8rem;
+}
+
+.hero__main {
+    padding: 30px 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.hero__title {
+    font-size: clamp(2rem, 5vw + 1rem, 2.8rem);
+}
+
+.hero__figure {
+    width: min(380px, 100%);
+    justify-self: center;
+}
+
+.hero__img {
+    width: 100%;
+}
+
+.hero__paragraph {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+.hero__cta {
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/** Services **/
+
+.services {
+    padding: var(--padding-container);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.title__hight {
+    background-color: var(--color-primario);
+    display: inline-block;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.paragraph {
+    margin-top: 1.5rem;
+}
+
+.services__container {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.services__title {
+    margin-bottom: 1.3rem;
+}
+
+.services__article {
+    width: min(95%, 450px);
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+
+    border-radius: 1.5rem;
+    border: 1px solid #000;
+    border-bottom: 3px solid #000;
+}
+
+.services__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.services__span {
+    background-color: var(--color-title);
+    width: max-content;
+    display: block;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.services__title--gray {
+    background-color: var(--gray-color);
+    --color-title: var(--color-primario);
+}
+
+.services__title--yellow {
+    background-color: var(--color-primario);
+    --color-title: white;
+}
+
+.services__title--black {
+    background-color: var(--color-secundario);
+    --color-title: white;
+}
+
+.services__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.services__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.services__arrow {
+    stroke: var(--color--arrow);
+}
+
+.services__img {
+    min-width: 80px;
+    max-width: 160px;
+    width: 50%;
+}
+
+/** CTA **/
+
+.cta {
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 3rem 1rem;
+}
+
+.cta__content {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.cta__texts {
+    display: grid;
+    gap: 1rem;
+}
+
+.cta__links {
+    padding: 1.3rem 0;
+    border-radius: 10px;
+    background-color: #191A23;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cta__figure {
+    display: none;
+}
+
+.cta__img {
+    width: 100%;
+}
+
+/** FAQ **/
+
+.faq {
+    padding: 80px 0;
+}
+
+.faqs__container {
+    margin-top: 3rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.faq__item {
+    background-color: var(--gray-color);
+    padding: 1.5rem;
+    border-radius: 30px;
+    border: 1px solid black;
+    border-bottom: 4px solid black;
+
+    --icon-question: url("./assets/close-question.svg");
+}
+
+.faq__item[open] {
+    background-color: var(--color-primario);
+    --icon-question: url("./assets/open-question.svg");
+}
+
+
+.faq__question {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq__question::after {
+    content: "";
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    background-image: var(--icon-question);
+}
+
+.faq__title {
+    font-size: 1.2rem;
+    width: 60%;
+}
+
+.faq__answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #000;
+}
+
+.faq__answer * {
+    line-height: 2;
+}
+
+/** Contact **/
+
+.contact {
+    padding: 80px 0;
+}
+
+.contact__content {
+    margin-top: 3rem;
+
+    background-color: var(--gray-color);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+.contact__figure {
+    display: none;
+}
+
+.contact__img {
+    width: 100%;
+}
+
+.contact__form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact__label {
+    display: grid;
+    gap: .3rem;
+}
+
+.contact__input,
+.contact__area {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.contact__area {
+    width: 100%;
+    height: 120px;
+    resize: none;
+}
+
+.contact__submit {
+    background-color: #000;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+/** Foooter **/
+
+.footer {
+    background-color: var(--color-secundario);
+}
+
+.footer__content {
+    padding: 80px 0;
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.footer__main {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__copy {
+    justify-self: center;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.footer__contact {
+    max-width: 250px;
+    display: grid;
+    gap: 1.3rem;
+    color: white;
+    text-align: center;
+}
+
+.footer__newsletter {
+    width: min(100%, 400px);
+    padding: 2rem 1.5rem;
+    background-color: #292A32;
+    border-radius: 10px;
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: 48px 48px;
+}
+
+.footer__email {
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 0 1.5rem;
+    background-color: transparent;
+    color: white;
+}
+
+.footer__email::placeholder {
+    color: white;
+}
+
+.footer__submit {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    border: none;
+    border-radius: 6px;
+}
+
+.footer__social {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+.footer__social-links {
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__copyright {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #fff;
+}
+
+.footer__copyright-text {
+    text-align: center;
+    color: white;
+}
+
+
+
+@media (width >=768px) {
+
+    /** Hero **/
+
+    .hero__main {
+        padding: var(--padding-container);
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        grid-template-areas:
+            "titulo img"
+            "parrafo img"
+            "link img";
+        grid-template-rows: max-content max-content max-content;
+        grid-auto-columns: 50% 45%;
+    }
+
+    .hero__title {
+        grid-area: titulo;
+    }
+
+    .hero__paragraph {
+        grid-area: parrafo;
+    }
+
+    .hero__cta {
+        grid-area: link;
+        padding: 1rem 2rem;
+        justify-self: start;
+        align-self: start;
+    }
+
+    .hero__figure {
+        grid-area: img;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+
+    /** CTA SECTION **/
+
+    .cta__content {
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: 45% 45%;
+    }
+
+    .cta__links {
+        padding: 1.3rem 2rem;
+        justify-self: start;
+        align-self: start;
+    }
+
+    .cta__figure {
+        display: block;
+    }
+
+    /** FAQ SECTION **/
+
+
+    .faq__title {
+        font-size: 1.4rem;
+    }
+
+    /** Contact **/
+
+    .contact {
+        padding: 80px 0;
+    }
+
+    .contact__content {
+        grid-template-columns: 50% 40%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact__figure {
+        display: block;
+
+    }
+
+
+}
+
+@media (width >= 900px) {
+
+    /** Hero **/
+
+    .hero {
+        --transform-list-menu: translate(0%);
+    }
+
+    .nav__label {
+        display: none;
+        cursor: pointer;
+    }
+
+    .nav__list {
+        position: static;
+
+        grid-auto-flow: column;
+        place-content: unset;
+        gap: 1rem;
+    }
+
+    /** Foooter **/
+
+    .footer {
+        background-color: #fff;
+    }
+
+    .footer__content {
+        border-radius: 30px 30px 0 0;
+        background-color: #191A23;
+
+    }
+
+    .footer__main {
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: 1fr 55% 1fr;
+        grid-template-areas:
+            "logo links media"
+            "contact news news";
+        justify-items: start;
+    }
+
+    .footer__links {
+        grid-area: links;
+        
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer__copy {
+        justify-self: start;
+    }
+
+    .footer__contact {
+        grid-area: contact;
+
+        text-align: left;
+    }
+
+    .footer__newsletter {
+        grid-area: news;
+        align-self: start;
+        justify-self: end;
+    }
+
+    .footer__email {
+        border: 1px solid #fff;
+        border-radius: 6px;
+        padding: 0 1.5rem;
+        background-color: transparent;
+        color: white;
+    }
+
+    .footer__email::placeholder {
+        color: white;
+    }
+
+    .footer__submit {
+        background-color: #B9FF66;
+        color: black;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .footer__social {
+        grid-area: media;
+        justify-self: end;
+    }
+
+    
+    .footer__copyright {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
+/* Estilos del logo */
+.nav__logo-link {
+    text-decoration: none;
+}
+
+.nav__logo {
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: bold; /* Estilo de fuente */
+    color: #000; /* Color del texto */
+    display: inline-block;
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+.nav__logo-link:hover .nav__logo {
+    color: #2091F9; /* Cambia el color del texto al pasar el ratón */
+}
+/** Chatbot **/
+
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.chatbot__icon {
+    background: var(--color-primario);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.chatbot__icon-img {
+    width: 40px;
+    height: 40px;
+}
+
+.chatbot__window {
+    display: none;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.chatbot__window.show {
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.chatbot__header {
+    padding: 10px;
+    background: var(--color-primario);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbot__title {
+    margin: 0;
+}
+
+.chatbot__close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chatbot__body {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chatbot__footer {
+    padding: 10px;
+    display: flex;
+}
+
+.chatbot__input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--color-secundario);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbot__send {
+    background-color: var(--color-primario);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chatbot__send:hover {
+    background-color: #a3d52d;
+}
+
+
+/* Chatbot Widget */
+
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco semitransparente */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Borde blanco sutil */
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.chatbot__icon:hover {
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco más opaco al pasar el ratón */
+    border-color: rgba(255, 255, 255, 0.9); /* Borde más visible al pasar el ratón */
+}
+
+.chatbot__window {
+    position: absolute;
+    bottom: 70px; /* Ajusta según la altura del icono */
+    right: 0;
+    width: 300px;
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Ocultar por defecto, se mostrará al hacer clic en el icono */
+    flex-direction: column;
+}
+
+.chatbot__header {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
+    color: #fff;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot__title {
+    font-size: 16px;
+}
+
+.chatbot__close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chatbot__body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbot__footer {
+    background: rgba(0, 0, 0, 0.1); /* Fondo muy sutilmente oscuro */
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.chatbot__input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chatbot__send {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estado inicial del chatbot (oculto) */
+.chatbot__window {
+    position: absolute;
+    bottom: 70px; 
+    right: 0;
+    width: 300px;
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Ocultar por defecto */
+    flex-direction: column;
+    opacity: 0; /* Inicio de la animación */
+    transform: translateY(30px); /* Desplazamiento inicial hacia abajo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Cuando se muestra el chatbot */
+.chatbot__window.show {
+    display: flex; /* Mostrar la ventana del chatbot */
+    opacity: 1; /* Fin de la animación */
+    transform: translateY(0); /* Posición final */
+}
+
+/* Para cerrar el chatbot con una animación */
+.chatbot__window.hide {
+    opacity: 0; /* Transición a opacidad 0 */
+    transform: translateY(30px); /* Desplazamiento hacia abajo */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Al finalizar la animación, ocultar el chatbot */
+.chatbot__window.hide.finished {
+    display: none; /* Ocultar después de la animación */
+}
+
+/* Estilo del formulario de evaluación */
+.evaluation-form-section {
+    margin: 3rem 0;
+}
+
+.evaluation-form-container {
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out; /* Animación de entrada del formulario */
+    position: relative;
+}
+
+.form-step {
+    margin-bottom: 1.5rem;
+}
+
+.form-step label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #191A23; /* Color acorde con el estilo de tu página */
+}
+
+.form-step input,
+.form-step select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-step input:focus,
+.form-step select:focus {
+    border-color: #B9FF66; /* Color de enfoque */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.form-navigation button {
+    background: #B9FF66; /* Color de fondo del botón */
+    color: #191A23; /* Color del texto */
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-navigation button:hover {
+    background: #A4E747; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-top: 2px solid #B9FF66; /* Color del borde superior */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.nav__logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo-img {
+    width: 80px; /* Ajusta el tamaño del logo */
+    height: auto;
+    margin-right: 10px; /* Espacio entre el logo y el texto */
+}
